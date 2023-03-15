@@ -305,6 +305,9 @@ function draw() {
 
    
 }
+
+
+
 function addChar(n,ob,arr) {
     let x = Math.floor(Math.random() * side)
     let y = Math.floor(Math.random() * side)

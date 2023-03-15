@@ -1,7 +1,6 @@
-class Barrier{
+class Barrier extends ConstClass{
     constructor(x,y){
-        this.x = x
-        this.y = y
+ super(x,y)
        
 
     }

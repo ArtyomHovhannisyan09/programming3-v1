@@ -1,24 +1,12 @@
-class Man {
+class Man  extends LivingCreature{
     constructor(x, y) {
-        this.x = x;
-        this.y = y;
+        super(x,y)
         this.energy = 20;
-        this.directions = [];
+
     }
-    getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
+  
     chooseCell(char,charColl1) {
-        this.getNewCoordinates();
+       super.getNewCoordinates();
         let found = [];
 
         for (let i in this.directions) {
