@@ -1,0 +1,20 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "programing 3 game upgred",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtyomHovhannisyan09/programming3-v1.git"
+  },
+  "author": "Artyom Hovhannisyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtyomHovhannisyan09/programming3-v1/issues"
+  },
+  "homepage": "https://github.com/ArtyomHovhannisyan09/programming3-v1#readme"
+}

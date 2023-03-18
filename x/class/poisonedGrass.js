@@ -1,4 +1,8 @@
-class PoisonedGrass extends LivingCreature{
+let LivingCreature =require("./LivingCreature")
+
+
+
+module.exports =class PoisonedGrass extends LivingCreature{
     constructor(x, y) {
         super(x,y)
             this.multiply = 0

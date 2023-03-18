@@ -1,4 +1,8 @@
-class Researcher extends LivingCreature {
+let LivingCreature =require("./LivingCreature")
+
+
+
+module.exports =class Researcher extends LivingCreature {
     constructor(x, y) {
         super(x,y)
         this.minerals = 0;
