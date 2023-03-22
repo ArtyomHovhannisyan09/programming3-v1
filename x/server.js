@@ -1,11 +1,15 @@
-const express = require('express')
-const app = express()
-const port = 3000
+var express = require('express');
+var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+var fs = require("fs");
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express.static("."));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+app.get('/', function (req, res) {
+    res.redirect('index.html');
+});
+const port = 8888
+server.listen(port, () => {
+    console.log('connected');
+});

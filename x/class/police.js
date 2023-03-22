@@ -33,9 +33,9 @@ module.exports =class Police extends LivingCreature{
 
 
 
-    destroy() {
+ arrest() {
         let emptyCell = this.chooseCell(8);
-        let newCell = random(emptyCell)
+        let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         if (newCell) {
             this.minerals += 5;

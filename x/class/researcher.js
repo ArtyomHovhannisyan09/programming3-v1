@@ -39,7 +39,7 @@ module.exports =class Researcher extends LivingCreature {
    
     destroy() {
         let emptyCell = this.chooseCell(7,9);
-        let newCell = random(emptyCell)
+        let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         if (newCell) {
             this.minerals += 5;

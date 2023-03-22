@@ -54,7 +54,7 @@ module.exports =class Man  extends LivingCreature{
     //ուտել
     eat() {
         let emptyCell = this.chooseCell(3,5);
-        let newCell = random(emptyCell)
+        let newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         if (newCell) {
             this.energy += 5;

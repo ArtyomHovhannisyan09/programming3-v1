@@ -300,7 +300,7 @@ function draw() {
     } for (let i in researcherArr) {
         researcherArr[i].destroy()
     } for (let i in policeArr) {
-        policeArr[i].destroy()
+        policeArr[i].arrest()
     }
 
    
