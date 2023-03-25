@@ -30,7 +30,7 @@ module.exports =class PoisonedGrass extends LivingCreature{
     mul() {
             this.multiply++
             var emptyCell = this.chooseCell(0)
-            var newCell = random(emptyCell)
+            let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
             if (this.multiply >= 26 && newCell) {
                     var newX = newCell[0]
