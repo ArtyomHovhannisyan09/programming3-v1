@@ -9,7 +9,7 @@ app.use(express.static("."));
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
-const port = 8888
+const port =3000
 server.listen(port, () => {
     console.log('connected');
 });
@@ -140,7 +140,7 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, man, poisonedG
 
     }
 
-
+    io.emit("send matrix", matrix)
     return matrix
 }
 matrix = matrixGenerator(30, 40, 5, 8, 8, 40, 7, 10, 7, 15)
@@ -162,15 +162,15 @@ const GrassEater = require("./class/grassEater")
 const Predator = require("./class/predator")
 const Man = require("./class/man")
 const Mushroom = require("./class/mushroom")
-const PoisonedGrass =require("./class/poisonedGrass")
-const Barrier =require("./class/barrier")
-const Builder =require("./class/builder")
-const restarter =require("./class/restarter")
-const Researcher =require("./class/researcher")
-const Police =require("./class/police")
+const PoisonedGrass = require("./class/poisonedGrass")
+const Barrier = require("./class/barrier")
+const Builder = require("./class/builder")
+const restarter = require("./class/restarter")
+const Researcher = require("./class/researcher")
+const Police = require("./class/police")
 
 
-function CreatObj(){
+function CreatObj() {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
 
@@ -212,9 +212,10 @@ function CreatObj(){
         }
 
     }
+    io.emit("send matrix", matrix)
 }
 CreatObj()
-function GameMove(){
+function GameMove() {
     for (let i in grassArr) {
         grassArr[i].mul()
     }
@@ -238,13 +239,46 @@ function GameMove(){
     for (let i in poisonedGrassArr) {
         poisonedGrassArr[i].mul()
     }
-    for (let i in builderArr) {
-        builderArr[i].destroy()
-    } for (let i in researcherArr) {
+    // for (let i in builderArr) {
+    //     builderArr[i].destroy()
+    // } 
+    for (let i in researcherArr) {
         researcherArr[i].destroy()
     } for (let i in policeArr) {
         policeArr[i].arrest()
     }
-
+    io.emit("send matrix", matrix)
 }
-setInterval(GameMove,1000)
+
+
+
+function addChar(n) {
+
+    console.log(n);
+    let x = Math.floor(Math.random() * 30)
+    let y = Math.floor(Math.random() * 30)
+    matrix[y][x] = n
+    if (n == 1) {
+        var gr = new Grass(x, y)
+        grassArr.push(gr)
+    }
+    else if (n == 2) {
+        var grEat = new GrassEater(x, y)
+        grassEaterArr.push(grEat)
+    }
+    else if (n == 3) {
+        var pred = new Predator(x, y)
+        predatorArr.push(pred)
+    }
+}
+
+
+
+
+io.on('connection', function (socket) {
+
+    socket.on("send button", addChar);
+})
+
+
+setInterval(GameMove, 300)
