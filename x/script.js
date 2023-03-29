@@ -19,7 +19,8 @@ function setup() {
 
 
 function ChangeColors(matrix) {
-
+scolors =["green","yellow","gray"]
+SumColors=["#baff1e","#40f700","#d6ffc8"]
     for (let y = 0; y < matrix.length; y++) {
         clientMatrix[y] = []
         for (let x = 0; x < matrix[y].length; x++) {
@@ -29,15 +30,15 @@ function ChangeColors(matrix) {
 
 
             if (matrix[y][x] == 1) {
-                fill("green")
+                fill(scolors[0])
                 rect(x * side, y * side, side, side)
                 text("🌿", x * side, y * side + tobot)
             } else if (matrix[y][x] == 2) {
-                fill("yellow")
+                fill(scolors[1])
                 rect(x * side, y * side, side, side)
                 text("😊", x * side, y * side + tobot)
             } else if (matrix[y][x] == 0) {
-                fill("gray")
+                fill(scolors[2])
                 rect(x * side, y * side, side, side)
 
             } else if (matrix[y][x] == 3) {
@@ -87,6 +88,7 @@ function ChangeColors(matrix) {
         }
 
     }
+
 }
 
 
@@ -97,7 +99,6 @@ function ChangeColors(matrix) {
 socket.on("send matrix", ChangeColors)
 
 
-console.log(clientMatrix);
 
 const ButtonForAddChar = document.getElementsByClassName("   button-arounder")
 
@@ -125,101 +126,6 @@ ButtonForAddChar[2].addEventListener("click", function () {
 // })
 
 
-// function Sesons(Seson) {
-
-//     for (let y = 0; y < clientMatrix.length; y++) {
-//         for (let x = 0; x < clientMatrix[y].length; x++) {
-//            tobot=side-side*0,1
-//            textSize(tobot)
-
-//             if (1 == 1) {
-
-//                 if (clientMatrix[y][x] == 1) {
-//                     fill("#baff1e")
-//                     rect(x * side, y * side, side, side)
-//                     text("🌿", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 2) {
-//                     fill("#40f700")
-//                     rect(x * side, y * side, side, side)
-//                     text("😊", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 0) {
-//                     fill("#d6ffc8")
-//                     rect(x * side, y * side, side, side)
-
-//                 }
-//             } else if (Seson == 2) {
-//                 if (clientMatrix[y][x] == 1) {
-//                     fill("#5c4604")
-//                     rect(x * side, y * side, side, side)
-//                     text("🌿", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 2) {
-//                     fill("#ffd799")
-//                     rect(x * side, y * side, side, side)
-//                     text("😊", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 0) {
-//                     fill("#b29362")
-//                     rect(x * side, y * side, side, side)
-
-//                 }
-//             } else if (Seson == 3) {
-//                 if (clientMatrix[y][x] == 1) {
-//                     fill("#16537e")
-//                     rect(x * side, y * side, side, side)
-//                     text("🌿", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 2) {
-//                     fill("#cfe2f3")
-//                     rect(x * side, y * side, side, side)
-//                     text("😊", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 0) {
-//                     fill("#b29362")
-//                     rect(x * side, y * side, side, side)
-
-//                 }
-//             } else if (Seson == 4) {
-//                 if (clientMatrix[y][x] == 1) {
-//                     fill("#fba0d0")
-//                     rect(x * side, y * side, side, side)
-//                     text("🌿", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 2) {
-//                     fill("#f4cccc")
-//                     rect(x * side, y * side, side, side)
-//                     text("😊", x * side, y * side + tobot)
-//                 } else if (clientMatrix[y][x] == 0) {
-//                     fill("#b5e89f")
-//                     rect(x * side, y * side, side, side)
-
-//                 }
-//             }
-//         }
-//     }
-// }
-
-
-function summer() {
-
-    for (let y = 0; y < clientMatrix.length; y++) {
-        for (let x = 0; x < clientMatrix[y].length; x++) {
-            tobot = side - side * 0, 1
-            textSize(tobot)
-
-
-
-            if (clientMatrix[y][x] == 1) {
-                fill("#baff1e")
-                rect(x * side, y * side, side, side)
-                text("🌿", x * side, y * side + tobot)
-            } else if (clientMatrix[y][x] == 2) {
-                fill("#40f700")
-                rect(x * side, y * side, side, side)
-                text("😊", x * side, y * side + tobot)
-            } else if (clientMatrix[y][x] == 0) {
-                fill("#d6ffc8")
-                rect(x * side, y * side, side, side)
-
-            }
-        }
-    }
-}
 
 const ButtonForAddSesons = document.getElementsByClassName("button-64")
-ButtonForAddSesons[0].addEventListener("click", summer)
+ButtonForAddSesons[0].addEventListener("click", )
