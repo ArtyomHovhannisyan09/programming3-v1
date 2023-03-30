@@ -15,12 +15,32 @@ function setup() {
     createCanvas(50 * side, 50 * side)
 
 
+}   
+
+let ses =[]
+function Seson(seson){
+   
+ if(seson==1){
+    scolors =["#e1e96b","#ffd966","#fff2cc"]
+ }else if(seson ==2){
+    scolors =["#7c5c00","#ffc210","#fce5cd"]
+ }else if(seson ==3){
+    scolors =["#0087ff","#003564","#cfe2f3"]
+ }else if(seson ==4){
+    scolors =["#43ff00","#1a5f02","#d9ead3"]
+ }else if (seson ==0) {
+       scolors =["green","yellow","gray"]
+ }
+ ses=scolors
+ console.log(ses);
+ return ses
 }
+
+Seson(1)
 
 
 function ChangeColors(matrix) {
-scolors =["green","yellow","gray"]
-SumColors=["#baff1e","#40f700","#d6ffc8"]
+
     for (let y = 0; y < matrix.length; y++) {
         clientMatrix[y] = []
         for (let x = 0; x < matrix[y].length; x++) {
@@ -30,15 +50,15 @@ SumColors=["#baff1e","#40f700","#d6ffc8"]
 
 
             if (matrix[y][x] == 1) {
-                fill(scolors[0])
+                fill(ses[0])
                 rect(x * side, y * side, side, side)
                 text("🌿", x * side, y * side + tobot)
             } else if (matrix[y][x] == 2) {
-                fill(scolors[1])
+                fill(ses[1])
                 rect(x * side, y * side, side, side)
                 text("😊", x * side, y * side + tobot)
             } else if (matrix[y][x] == 0) {
-                fill(scolors[2])
+                fill(ses[2])
                 rect(x * side, y * side, side, side)
 
             } else if (matrix[y][x] == 3) {
