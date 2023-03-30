@@ -9,7 +9,10 @@ app.use(express.static("."));
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
-const port =3000
+app.get("/info", function(req,res) {
+    res.sendFile(__dirname + "/info.html");
+});
+const port =3002
 server.listen(port, () => {
     console.log('connected');
 });
@@ -280,5 +283,27 @@ io.on('connection', function (socket) {
     socket.on("send button", addChar);
 })
 
+function alldatas() {
+    countd = {
+        grass: grassArr.length,
+        grassEater: grassEaterArr.length,
+        predator: predatorArr.length,
+        man: manArr.length,
+        mushroom: mushroomArr.length,
+        poisonedGrass: poisonedGrassArr.length,
+        barrier: barrierArr.length,
+        builder: builderArr.length,
+        restarter: restarterArr.length,
+        researcher: researcherArr.length,
+        police: policeArr.length,
+
+  
+    }
+    fs.writeFile("statistics.json", JSON.stringify(countd), function () {
+    socket.emit("send datas", countd)
+    })
+
+}
+setInterval(alldatas, 300);
 
 setInterval(GameMove, 300)

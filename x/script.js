@@ -127,5 +127,23 @@ ButtonForAddChar[2].addEventListener("click", function () {
 
 
 
-const ButtonForAddSesons = document.getElementsByClassName("button-64")
-ButtonForAddSesons[0].addEventListener("click", )
+
+
+socket.on ("send datas", function(counts){
+    
+    document.getElementById("grass").innerHTML = counts.grass;
+    document.getElementById("grassEater").innerHTML = counts.grassEater;
+    document.getElementById("predator").innerHTML = counts.predator;
+    document.getElementById("man").innerHTML = counts.man;
+    document.getElementById("mushroom").innerHTML = counts.mushroom;
+    document.getElementById("poisonedGrass").innerHTML = counts.poisonedGrass;
+    document.getElementById("barrier").innerHTML = counts.barrier;
+    document.getElementById("builderArr").innerHTML = counts.builderArr;
+    document.getElementById("restarter").innerHTML = counts.restarter;
+    document.getElementById("researcher").innerHTML = counts.researcher;
+    document.getElementById("police").innerHTML = counts.police;
+    console.log(counts);
+   
+    
+   
+})
