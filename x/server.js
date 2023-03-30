@@ -257,7 +257,7 @@ function GameMove() {
 
 function addChar(n) {
 
-    console.log(n);
+
     let x = Math.floor(Math.random() * 30)
     let y = Math.floor(Math.random() * 30)
     matrix[y][x] = n
@@ -300,7 +300,7 @@ function alldatas() {
   
     }
     fs.writeFile("state.json", JSON.stringify(countd), function () {
-   io.emit("send datas", countd)
+    io.emit("send datas", countd)
     })
 
 }

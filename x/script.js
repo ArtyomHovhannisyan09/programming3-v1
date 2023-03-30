@@ -142,7 +142,7 @@ socket.on ("send datas", function(counts){
     document.getElementById("restarter").innerHTML = counts.restarter;
     document.getElementById("researcher").innerHTML = counts.researcher;
     document.getElementById("police").innerHTML = counts.police;
-    console.log(counts);
+
    
     
    
