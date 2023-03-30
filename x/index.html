@@ -22,66 +22,66 @@
     <script src="class/researcher.js"></script>
     <script src="class/police.js"></script> -->
 
-    
-  
+
+
 </head>
 
 <body>
-<h1 id="HH">GAME OF LIFE</h1>
-<h2 id="SN">Hovhannisyan Artyom</h2>
+    <h1 id="HH">GAME OF LIFE</h1>
+    <h2 id="SN">Hovhannisyan Artyom</h2>
 
 
 
-<button class="button button-arounder"   style="margin-left: 25%; "     >add Pred</button>
-<button class="button button-arounder" >add GrassEat</button>
-<button class="button button-arounder">add Barrier</button>
-<button class="button button-arounder">add Grass</button>
-<button class="button button-arounder">Restart</button>
+    <button class="button button-arounder" style="margin-left: 25%; ">add Pred</button>
+    <button class="button button-arounder">add GrassEat</button>
+    <button class="button button-arounder">add Barrier</button>
+    <button class="button button-arounder">add Grass</button>
+    <button class="button button-arounder">Restart</button>
 
-<div class="seasonsBtn">
-<button class="button-64 ">SUMMER</button>
-<button class="button-64 ">AUTUMN</button>
-<button class="button-64 ">WINTER</button>
-<button class="button-64 ">SPRING</button>
-</div>
+    <div class="seasonsBtn">
+        <button class="button-64 ">SUMMER</button>
+        <button class="button-64 ">AUTUMN</button>
+        <button class="button-64 ">WINTER</button>
+        <button class="button-64 ">SPRING</button>
+    </div>
 
-<button class="button-79" role="button"><a href="/info">INFORMATION</a></button>
-<script src="/socket.io/socket.io.js"></script>
-   <script src="script.js"></script>
+    <button class="button-79" role="button"><a href="/info">INFORMATION</a></button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
 
-   <div class="container">
-   <table>  
-    <tr>
-        <th>grass</th>
-        <th>grassEater</th>
-        <th>predator</th>
-        <th>man</th>
-        <th>mushroom</th>
-        <th>poisonedGrass</th>
-        <th>barrier</th>
-        <th>builder</th>
-        <th>restarter</th>
-        <th>researcher</th>
-        <th>police</th>
-    </tr>
-    <tr>
-        <td class="grass"></td>
-        <td class="grassEater"></td>
-        <td class="predator"></td>
-        <td class="man"></td>
-        <td class="mushroom"></td>
-        <td class="poisonedGrass"></td>
-        <td class="barrier"></td>
-        <td class="builder"></td>
-        <td class="restarter"></td>
-        <td class="researcher"></td>
-        <td class="police"></td>
+    <div class="container">
+        <table>
+            <tr>
+                <th>grass</th>
+                <th>grassEater</th>
+                <th>predator</th>
+                <th>man</th>
+                <th>mushroom</th>
+                <th>poisonedGrass</th>
+                <th>barrier</th>
+                <th>builder</th>
+                <th>restarter</th>
+                <th>researcher</th>
+                <th>police</th>
+            </tr>
+            <tr>
+                <td id="grass " class="coun"></td>
+                <td id="grassEater" class="coun"></td>
+                <td id="predator" class="coun"></td>
+                <td id="man" class="coun"></td>
+                <td id="mushroom" class="coun"></td>
+                <td id="poisonedGrass" class="coun"></td>
+                <td id="barrier" class="coun"></td>
+                <td id="builder" class="coun"></td>
+                <td id="restarter" class="coun"></td>
+                <td id="researcher" class="coun"></td>
+                <td id="police" class="coun"></td>
 
-       
- 
-    </tr>
-   </table>
-     </div>
+
+
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>

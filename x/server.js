@@ -299,8 +299,8 @@ function alldatas() {
 
   
     }
-    fs.writeFile("statistics.json", JSON.stringify(countd), function () {
-    socket.emit("send datas", countd)
+    fs.writeFile("state.json", JSON.stringify(countd), function () {
+   io.emit("send datas", countd)
     })
 
 }

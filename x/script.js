@@ -138,7 +138,7 @@ socket.on ("send datas", function(counts){
     document.getElementById("mushroom").innerHTML = counts.mushroom;
     document.getElementById("poisonedGrass").innerHTML = counts.poisonedGrass;
     document.getElementById("barrier").innerHTML = counts.barrier;
-    document.getElementById("builderArr").innerHTML = counts.builderArr;
+    document.getElementById("builder").innerHTML = counts.builder;
     document.getElementById("restarter").innerHTML = counts.restarter;
     document.getElementById("researcher").innerHTML = counts.researcher;
     document.getElementById("police").innerHTML = counts.police;
