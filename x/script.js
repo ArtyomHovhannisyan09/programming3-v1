@@ -11,6 +11,8 @@ var side = 30
 let clientMatrix = []
 
 function setup() {
+ 
+
     frameRate(7)
     createCanvas(50 * side, 50 * side)
 
@@ -21,7 +23,7 @@ let ses =[]
 function Seson(seson){
    
  if(seson==1){
-    scolors =["#e1e96b","#ffd966","#fff2cc"]
+    scolors =["#e1e96b","#ffd966","#ddc785"]
  }else if(seson ==2){
     scolors =["#7c5c00","#ffc210","#fce5cd"]
  }else if(seson ==3){
@@ -141,10 +143,9 @@ ButtonForAddChar[2].addEventListener("click", function () {
 
     socket.emit("send button", 7);
 })
-// ButtonForAddChar[4].addEventListener("click", function () {
-//     socket.emit("send button", 0);
-// })
-
+ButtonForAddChar[4].addEventListener("click", function () {
+    socket.emit("send button", 77);
+})
 
 
 
@@ -182,6 +183,6 @@ BCH.addEventListener("click" ,function(){
   const btn =  document.getElementsByTagName("button")
     console.log(btn);
     document.body.style.backgroundColor="#"+randomColor;
-   btn.style.backgroundColor="#"+randomColor;
+  
   
 })

@@ -13,6 +13,7 @@ background-color: #34fffc;
   }
 
 
+
   audio, embed {
     position: absolute;
     z-index: -9999;
@@ -32,12 +33,14 @@ margin-left: 37%;
 margin-left: 37%;
 font-size: 40px;
 text-align: auto;
+transition: 1s;
 }
 #SN:hover{
   color: rgb(139, 141, 144);
 margin-left: 35%;
 text-align: auto;
 font-size: 40px;
+transition: 1s;
 }
 
 
@@ -154,6 +157,10 @@ font-size: 40px;
 .button-64:active,
 .button-64:hover {
   outline: 0;
+
+  transform: rotateX(-5);
+font-size: 34px;
+transition: 1s;
 }
 
 .button-64 span {
@@ -277,3 +284,21 @@ th {
 
 
 
+table:hover{
+  background-color: rgba(0,0,0,0.4) ;
+	width: 810px;
+	border-collapse: collapse;
+	overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+  transition: 0.8s;
+}
+
+table::before{
+  background-color: rgba(0,0,0,0.1) ;
+  transition: 0.8s;
+}
+
+table:hover::after{
+  background-color: rgba(0,0,0,0.1) ;
+  transition: 0.8s;
+}
