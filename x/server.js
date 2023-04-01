@@ -146,7 +146,7 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, man, poisonedG
     io.emit("send matrix", matrix)
     return matrix
 }
-matrix = matrixGenerator(30, 40, 5, 8, 8, 40, 7, 10, 7, 15)
+matrix = matrixGenerator(30, 40, 10, 8, 8, 40, 7, 10, 7, 15)
 
 grassArr = []
 grassEaterArr = []
@@ -170,7 +170,8 @@ const Barrier = require("./class/barrier")
 const Builder = require("./class/builder")
 const restarter = require("./class/restarter")
 const Researcher = require("./class/researcher")
-const Police = require("./class/police")
+const Police = require("./class/police");
+const { log } = require('console');
 
 
 function CreatObj() {
@@ -273,6 +274,7 @@ function addChar(n) {
         var pred = new Predator(x, y)
         predatorArr.push(pred)
     }
+   
 }
 
 

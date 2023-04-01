@@ -2,8 +2,8 @@
 body{
 	background-size: cover;
 /* background-image: url(im.jpeg); */
-/* background-color: black; */
-background: linear-gradient(#34fffc, #21ff76);
+background-color: #34fffc;
+/* background: linear-gradient(#34fffc, #21ff76); */
  
 }
 

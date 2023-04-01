@@ -32,7 +32,7 @@ function Seson(seson){
        scolors =["green","yellow","gray"]
  }
  ses=scolors
- console.log(ses);
+
  return ses
 }
 
@@ -142,7 +142,7 @@ ButtonForAddChar[2].addEventListener("click", function () {
     socket.emit("send button", 7);
 })
 // ButtonForAddChar[4].addEventListener("click", function () {
-
+//     socket.emit("send button", 0);
 // })
 
 
@@ -166,4 +166,22 @@ socket.on ("send datas", function(counts){
    
     
    
+})
+const body = document.getElementsByTagName("body");
+
+
+   
+
+
+
+const BCH =document.getElementById("changeB")
+
+BCH.addEventListener("click" ,function(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  
+  const btn =  document.getElementsByTagName("button")
+    console.log(btn);
+    document.body.style.backgroundColor="#"+randomColor;
+   btn.style.backgroundColor="#"+randomColor;
+  
 })
