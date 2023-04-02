@@ -16,7 +16,62 @@ function setup() {
     frameRate(7)
     createCanvas(50 * side, 50 * side)
 
-
+    const data = {
+        labels: [
+          'grass',
+          'grassEater',
+          'predator',
+          'man',
+          'mushroom',
+          'poisonedGrass',
+          'barrier',
+          'builder',
+          'restarter',
+          'researcher',
+          'police'
+       
+          
+        ],
+        datasets: [{
+          label: 'Chart of game',
+          data: [30, 40, 10, 8, 8, 40, 7, 10, 7, 15],
+          backgroundColor: [
+            'green',
+            'yellow',
+            'red',
+            '#fce5cd',
+            '#783f04',
+            '#bf9e13',
+            'black',
+            ' #6fa8dc',
+            
+            'lightgreen',
+            'rgb(255, 255, 255)',
+            'blue'
+          ],
+         hoverOffset: 4
+        }]
+      };
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            }
+        }
+      };
+      myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      
+      );
+      
 }   
 
 let ses =[]
@@ -164,7 +219,8 @@ socket.on ("send datas", function(counts){
     document.getElementById("researcher").innerHTML = counts.researcher;
     document.getElementById("police").innerHTML = counts.police;
 
-   
+    myChart.data.datasets[0].data = [counts.grass, counts.grassEater, counts.predator, counts.man, counts.mushroom,counts.poisonedGrass,counts.barrier,counts.builder,counts.restarter,counts.researcher,counts.police];
+    myChart.update();
     
    
 })

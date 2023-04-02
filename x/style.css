@@ -302,3 +302,11 @@ table:hover::after{
   background-color: rgba(0,0,0,0.1) ;
   transition: 0.8s;
 }
+
+
+.diagramState{
+  
+    margin-right: 1000px;
+  transform: rotateX('2000px');
+  transform: translate(200px, -100px);
+}
