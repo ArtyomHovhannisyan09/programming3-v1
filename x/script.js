@@ -209,6 +209,9 @@ ButtonForAddChar[4].addEventListener("click", function () {
 ButtonForAddChar[5].addEventListener("click", function () {
     socket.emit("send button", 66);
 })
+ButtonForAddChar[6].addEventListener("click", function () {
+    socket.emit("send button", 77);
+})
 
 
 socket.on ("send datas", function(counts){
