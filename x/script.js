@@ -10,6 +10,31 @@ var side = 30
 
 let clientMatrix = []
 
+
+
+
+let ses =[]
+function Seson(seson){
+   
+ if(seson==1){
+    scolors =["#e1e96b","#ffd966","#ddc785"]
+ }else if(seson ==2){
+    scolors =["#7c5c00","#ffc210","#fce5cd"]
+ }else if(seson ==3){
+    scolors =["#0087ff","#003564","#cfe2f3"]
+ }else if(seson ==4){
+    scolors =["#43ff00","#1a5f02","#d9ead3"]
+ }else if (seson ==0) {
+       scolors =["green","yellow","gray"]
+ }
+ ses=scolors
+
+ return ses
+}
+
+Seson(0)
+
+setInterval(Seson,300)
 function setup() {
  
 
@@ -36,8 +61,8 @@ function setup() {
           label: 'Chart of game',
           data: [30, 40, 10, 8, 8, 40, 7, 10, 7, 15],
           backgroundColor: [
-            'green',
-            'yellow',
+            ses[0],
+            ses[1],
             'red',
             '#fce5cd',
             '#783f04',
@@ -73,27 +98,6 @@ function setup() {
       );
       
 }   
-
-let ses =[]
-function Seson(seson){
-   
- if(seson==1){
-    scolors =["#e1e96b","#ffd966","#ddc785"]
- }else if(seson ==2){
-    scolors =["#7c5c00","#ffc210","#fce5cd"]
- }else if(seson ==3){
-    scolors =["#0087ff","#003564","#cfe2f3"]
- }else if(seson ==4){
-    scolors =["#43ff00","#1a5f02","#d9ead3"]
- }else if (seson ==0) {
-       scolors =["green","yellow","gray"]
- }
- ses=scolors
-
- return ses
-}
-
-Seson(1)
 
 
 function ChangeColors(matrix) {
@@ -202,7 +206,9 @@ ButtonForAddChar[4].addEventListener("click", function () {
     socket.emit("send button", 77);
 })
 
-
+ButtonForAddChar[5].addEventListener("click", function () {
+    socket.emit("send button", 66);
+})
 
 
 socket.on ("send datas", function(counts){
@@ -232,6 +238,7 @@ const body = document.getElementsByTagName("body");
 
 
 const BCH =document.getElementById("changeB")
+const dic =document.getElementById("dico")
 
 BCH.addEventListener("click" ,function(){
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -242,3 +249,4 @@ BCH.addEventListener("click" ,function(){
   
   
 })
+

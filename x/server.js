@@ -243,9 +243,9 @@ function GameMove() {
     for (let i in poisonedGrassArr) {
         poisonedGrassArr[i].mul()
     }
-    // for (let i in builderArr) {
-    //     builderArr[i].destroy()
-    // } 
+    for (let i in builderArr) {
+        builderArr[i].destroy()
+    } 
     for (let i in researcherArr) {
         researcherArr[i].destroy()
     } for (let i in policeArr) {
@@ -291,17 +291,34 @@ function addChar(n) {
                 predatorArr.splice(0, predatorArr.length)
 
 
-                // for (let i = 0; i < grassArr.length; i++) {
-                //     if (grassArr[i].x == newX && grassArr[i].y == newY) {
-                //         grassArr.splice(i, 1)
-                //         break;
-                //     }
-                // }
+             
             }
 
         }
         matrix = matrixGenerator(30, 40, 10, 8, 8, 40, 7, 10, 7, 15)
         CreatObj()
+    }else if (n ==66){
+        for (let y = 0; y < matrix.length; y++) {
+            for (let x = 0; x < matrix[y].length; x++) {
+                matrix[y][x] = 0
+                grassArr.splice(0, grassArr.length)
+
+                grassEaterArr.splice(0, grassEaterArr.length)
+                barrierArr.splice(0, barrierArr.length)
+                builderArr.splice(0, builderArr.length)
+                manArr.splice(0, manArr.length)
+                mushroomArr.splice(0, mushroomArr.length)
+                researcherArr.splice(0, researcherArr.length)
+                restarterArr.splice(0, restarterArr.length)
+                policeArr.splice(0, policeArr.length)
+                poisonedGrassArr.splice(0, poisonedGrassArr.length)
+                predatorArr.splice(0, predatorArr.length)
+
+
+             
+            }
+
+        }
     }
 }
 

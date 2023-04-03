@@ -54,7 +54,7 @@ module.exports =class Builder extends LivingCreature{
             }for (let i = 0; i < restarterArr.length; i++) {
                 if(predatorArr.length < 3){
 
-                    window.reload();
+                    
                 }
                 if (restarterArr[i].x == newX && restarterArr[i].y == newY) {
                     restarterArr.splice(i, 1)

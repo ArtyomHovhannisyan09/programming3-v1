@@ -305,8 +305,9 @@ table:hover::after{
 
 
 .diagramState{
-  
+ 
     margin-right: 1000px;
   transform: rotateX('2000px');
   transform: translate(200px, -100px);
 }
+
